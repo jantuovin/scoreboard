@@ -38,12 +38,12 @@
         </tr>
       </tbody>
     </table>
-    <form name="myForm">
+    <form name="newScoreForm">
       <div class="form-inline">
         <input type="text" required maxlength=20 ng-model="newScore.playerName"
           placeholder="Player name (1-20 characters)" />
         <input type=number required min=1 max=99999 step=1 ng-model="newScore.score" placeholder="Score (1-99999)" />
-        <button ng-disabled="myForm.$invalid" ng-click="addNewScore()" class="btn btn-primary">Add to
+        <button ng-disabled="newScoreForm.$invalid" ng-click="addNewScore()" class="btn btn-primary">Add to
           scoreboard</button>
       </div>
     </form>
