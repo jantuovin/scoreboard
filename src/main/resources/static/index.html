@@ -1,0 +1,53 @@
+<!doctype html>
+<html ng-app="controller">
+
+<head>
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.0.5/angular.js"></script>
+  <script src="http://angular-ui.github.com/bootstrap/ui-bootstrap-tpls-0.1.0.js"></script>
+  <script src="controller.js"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.2/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    div.wrapper {
+      width: 75%;
+      margin: auto;
+      padding: 1em;
+      border: 1px solid gray;
+    }
+
+    .addBottomMargin {
+      margin-bottom: 1em;
+    }
+  </style>
+  <title>Scoreboard</title>
+</head>
+
+<body>
+  <div ng-controller="ScoresController" class="wrapper">
+    <button ng-click="sortScores()" class="btn btn-primary addBottomMargin">Sort scoreboard</button>
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th>Player name</th>
+          <th>Score</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat="score in scores">
+          <td>{{score.playerName}}</td>
+          <td>{{score.score}}</td>
+        </tr>
+      </tbody>
+    </table>
+    <form name="myForm">
+      <div class="form-inline">
+        <input type="text" required maxlength=20 ng-model="newScore.playerName"
+          placeholder="Player name (1-20 characters)" />
+        <input type=number required min=1 max=99999 step=1 ng-model="newScore.score" placeholder="Score (1-99999)" />
+        <button ng-disabled="myForm.$invalid" ng-click="addNewScore()" class="btn btn-primary">Add to
+          scoreboard</button>
+      </div>
+    </form>
+  </div>
+</body>
+
+</html>
