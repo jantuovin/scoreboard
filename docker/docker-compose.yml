@@ -1,0 +1,32 @@
+version: '3.5'
+
+services:
+  mysqlservice:
+    image: mysql
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: 'root'
+      MYSQL_DATABASE: 'scoreboard_db'
+      MYSQL_USER: 'springuser'
+      MYSQL_PASSWORD: '1234'
+    volumes:
+      - database:/var/lib/mysql
+    networks:
+      - mt-network
+    ports:
+      - 3306:3306
+  scoreboard:
+    image: jantuovin/scoreboard
+    depends_on:
+      - mysqlservice
+    networks:
+      - mt-network
+    ports:
+      - 8080:8080
+
+volumes:
+  database:
+
+networks:
+  mt-network:
+    driver: bridge

@@ -9,10 +9,27 @@ Application is build using:
 - Gradle
 
 Requirements for running the application:
-- MySQL database (tested with version 8.0.17)
-- JDK 8 or higher
+- Docker, Docker Compose
+- or MySQL database (tested with version 8.0.17), JDK 8 or higher
 
 ## How to run the application?
+### Using Docker and Docker Compose
+Clone or download this repository, go to the folder using command line and then go to the docker folder.
+```
+cd docker
+```
+
+Run application using docker-compose up command.
+```
+docker-compose up
+```
+
+After the server is started, point your web browser to {ipofmachinerunningdocker}:8080 to access the application.
+```
+{ipofmachinerunningdocker}:8080
+```
+
+### Using software istalled on local machine 
 Access MySQL server (install MySQL server if needed) to create a database and a user for the application. Here root is your root user name and password is your root user password.
 ```
 mysql -uroot -ppassword
