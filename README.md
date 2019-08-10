@@ -29,7 +29,7 @@ After the server is started, point your web browser to {ipofmachinerunningdocker
 {ipofmachinerunningdocker}:8080
 ```
 
-### Using software istalled on local machine 
+### Using software installed on local machine 
 Access MySQL server (install MySQL server if needed) to create a database and a user for the application. Here root is your root user name and password is your root user password.
 ```
 mysql -uroot -ppassword
